@@ -19,6 +19,11 @@ const sidebarItems = [
     icon: Mail,
   },
   {
+    title: "Webmail",
+    href: "/dashboard/webmail",
+    icon: Mail,
+  },
+  {
     title: "Settings",
     href: "/dashboard/settings",
     icon: Settings,

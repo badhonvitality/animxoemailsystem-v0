@@ -245,7 +245,7 @@ export function AdvancedUserManagement() {
                 <Button onClick={handleCreateUser} disabled={!newUserData.email || !newUserData.password}>
                   Create User
                 </Button>
-              </DialogFooter>
+                {user.lastLogin && user.lastLogin > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) && (
             </DialogContent>
           </Dialog>
         </div>

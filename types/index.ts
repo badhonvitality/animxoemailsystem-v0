@@ -17,6 +17,17 @@ export interface EmailAccount {
   isActive: boolean
   createdAt: Date
   lastAccessed?: Date
+  isVerified?: boolean
+  imapSettings?: {
+    server: string
+    port: number
+    ssl: boolean
+  }
+  smtpSettings?: {
+    server: string
+    port: number
+    ssl: boolean
+  }
 }
 
 export interface EmailMessage {
@@ -28,6 +39,9 @@ export interface EmailMessage {
   isRead: boolean
   receivedAt: Date
   attachments?: EmailAttachment[]
+  folder?: string
+  size?: number
+  uid?: number
 }
 
 export interface EmailAttachment {
@@ -36,6 +50,22 @@ export interface EmailAttachment {
   size: number
   contentType: string
   url: string
+}
+
+export interface EmailFolder {
+  name: string
+  displayName: string
+  messageCount: number
+  unreadCount: number
+}
+
+export interface ComposeEmail {
+  to: string[]
+  cc?: string[]
+  bcc?: string[]
+  subject: string
+  body: string
+  attachments?: File[]
 }
 
 export interface CpanelApiResponse {

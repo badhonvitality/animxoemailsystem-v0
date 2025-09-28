@@ -162,7 +162,7 @@ export class CpanelAPI {
   static async deleteEmailAccount(username: string): Promise<{ success: boolean; error?: string }> {
     try {
       const config = this.getServerConfig()
-      const targetDomain = config.domain === "*" ? "animxo.com" : config.domain
+      const targetDomain = config.domain
       const fullEmail = `${username}@${targetDomain}`
 
       console.log("[v0] Deleting email account:", { username, fullEmail, domain: targetDomain })
@@ -173,6 +173,10 @@ export class CpanelAPI {
       })
 
       if (result.status === 200) {
+        if (result.errors && result.errors.length > 0) {
+          console.error("[v0] Email deletion failed:", result.errors)
+          return { success: false, error: result.errors[0] }
+        }
         console.log("[v0] Email account deleted successfully")
         return { success: true }
       } else {

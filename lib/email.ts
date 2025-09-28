@@ -63,13 +63,16 @@ export class EmailService {
     emailAccount: EmailAccount,
   ): Promise<{ success: boolean; error?: string }> {
     try {
+      // Extract username from email
+      const username = emailAccount.email.split("@")[0]
+      
       // Delete via API route instead of direct cPanel access
       const response = await fetch("/api/cpanel/delete-email", {
-        method: "POST",
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: emailAccount.email }),
+        body: JSON.stringify({ email: username }),
       })
 
       const result = await response.json()

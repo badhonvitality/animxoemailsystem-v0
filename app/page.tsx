@@ -1,10 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { DeveloperCredits } from "@/components/developer-credits"
+import { useAuth } from "@/hooks/use-auth"
 import { Mail, Shield, Users, Settings, Database, Globe } from "lucide-react"
 
 export default function HomePage() {
+  const { user, loading } = useAuth()
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -16,11 +21,21 @@ export default function HomePage() {
               <h1 className="text-2xl font-bold text-foreground">AnimXO Mail</h1>
             </div>
             <div className="flex items-center gap-4 animate-slide-in-right">
-              <Link href="/login">
-                <Button variant="outline" className="hover-lift button-press bg-transparent">
-                  Login
-                </Button>
-              </Link>
+              {loading ? (
+                <div className="w-20 h-9 bg-muted animate-pulse rounded-md"></div>
+              ) : user ? (
+                <Link href="/dashboard">
+                  <Button className="hover-lift button-press">
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : (
+                <Link href="/login">
+                  <Button variant="outline" className="hover-lift button-press bg-transparent">
+                    Login
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
