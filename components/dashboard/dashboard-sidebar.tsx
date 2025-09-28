@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/hooks/use-auth"
-import { Mail, Home, Settings, LogOut, Shield } from "lucide-react"
+import { Mail, Chrome as Home, Settings, LogOut, Shield } from "lucide-react"
 
 const sidebarItems = [
   {

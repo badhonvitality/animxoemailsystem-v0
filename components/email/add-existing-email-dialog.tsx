@@ -16,7 +16,7 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { DatabaseService } from "@/lib/database"
 import { CLIENT_ENV } from "@/lib/env"
-import { Plus, Eye, EyeOff, CheckCircle, AlertCircle } from "lucide-react"
+import { Plus, Eye, EyeOff, CircleCheck as CheckCircle, CircleAlert as AlertCircle } from "lucide-react"
 import type { EmailAccount } from "@/types"
 
 interface AddExistingEmailDialogProps {

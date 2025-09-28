@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useToast } from "@/hooks/use-toast"
-import { Settings, Server, Mail, Shield, Database, Globe, CheckCircle, AlertCircle } from "lucide-react"
+import { Settings, Server, Mail, Shield, Database, Globe, CircleCheck as CheckCircle, CircleAlert as AlertCircle } from "lucide-react"
 
 export default function AdminSettingsPage() {
   const [settings, setSettings] = useState({

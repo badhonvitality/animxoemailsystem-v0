@@ -16,21 +16,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { 
-  Mail, 
-  Send, 
-  Inbox, 
-  Sent, 
-  Trash2, 
-  Edit, 
-  Search, 
-  Refresh,
-  Reply,
-  Forward,
-  Archive,
-  Star,
-  Paperclip
-} from "lucide-react"
+import { Mail, Send, Inbox, Send as Sent, Trash2, CreditCard as Edit, Search, RefreshCw as Refresh, Reply, Forward, Archive, Star, Paperclip } from "lucide-react"
 import type { EmailMessage, EmailFolder, ComposeEmail } from "@/types"
 import { formatDistanceToNow } from "date-fns"
 
